@@ -1,0 +1,8 @@
+{
+  "telegram_token": "7705638302:AAEuznSv_PaFJPg3Izf9GRfEMnfNxaBEobU",
+  "chat_id": "1240111744",
+  "valor_aposta": 1.0,
+  "limiar_entrada": 2.0,
+  "modo_oculto": true,
+  "intervalo_coleta": 30
+}

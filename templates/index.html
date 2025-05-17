@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Spartan Bot v1.0</title>
+    <style>
+        body {
+            font-family: Arial;
+            background-color: #1e1e1e;
+            color: white;
+            text-align: center;
+            padding: 40px;
+        }
+        .status {
+            font-size: 24px;
+            margin: 20px;
+        }
+        .estatisticas {
+            font-size: 20px;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>🤖 Spartan Bot v1.0 – Análise Inteligente do Aviator</h1>
+
+    <div class="status" id="status">🔹 Status: Aguardando dados...</div>
+    <div class="estatisticas" id="contador">🎯 Win: 0 | ❌ Loss: 0 | 📊 Taxa: 0%</div>
+    <div class="estatisticas" id="ultimo">⏱ Último Multiplicador: --</div>
+    <div class="estatisticas" id="previsao">📈 Chance Acima de x2: --</div>
+
+    <script>
+        setInterval(() => {
+            fetch("/api/status")
+                .then(res => res.json())
+                .then(data => {
+                    document.getElementById("status").innerText = `🔹 Status: ${data.status}`;
+                    document.getElementById("contador").innerText = `🎯 Win: ${data.win} | ❌ Loss: ${data.loss} | 📊 Taxa: ${data.taxa}%`;
+                    document.getElementById("ultimo").innerText = `⏱ Último Multiplicador: x${data.ultimo.toFixed(2)}`;
+                    document.getElementById("previsao").innerText = `📈 Chance Acima de x2: ${data.chance}%`;
+                });
+        }, 10000);
+    </script>
+</body>
+</html>

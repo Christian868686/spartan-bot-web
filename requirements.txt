@@ -1,0 +1,10 @@
+selenium
+pandas
+numpy
+scikit-learn
+xgboost
+requests
+webdriver-manager
+flask
+joblib
+beautifulsoup4
