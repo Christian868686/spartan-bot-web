@@ -32,3 +32,8 @@ def coletar_dados():
             driver.quit()
         except:
             pass
+
+# Coleta automática a cada 10 segundos
+while True:
+    coletar_dados()
+    time.sleep(10)
